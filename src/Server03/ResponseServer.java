@@ -23,6 +23,7 @@ public class ResponseServer {
     // 客户端连接此服务器
     void receive() {
         try {
+            // 接收请求
             Socket client = serverSocket.accept();
             System.out.println("一个客户端建立了连接");
             InputStream is = new BufferedInputStream(client.getInputStream());
@@ -31,6 +32,7 @@ public class ResponseServer {
             int len = is.read(datas);
             System.out.println(new String(datas, 0, len));
 
+            // 发送响应
             StringBuilder content = new StringBuilder();
             content.append("<html>");
             content.append("<head>");
