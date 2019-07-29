@@ -1,4 +1,4 @@
-package Server06;
+package Server06.packed;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

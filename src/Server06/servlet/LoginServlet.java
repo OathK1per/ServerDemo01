@@ -1,4 +1,8 @@
-package Server06;
+package Server06.servlet;
+
+import Server06.packed.Request;
+import Server06.packed.Response;
+import Server06.packed.Servlet;
 
 public class LoginServlet implements Servlet {
 

@@ -1,4 +1,4 @@
-package Server06;
+package Server06.packed;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

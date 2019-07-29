@@ -1,4 +1,4 @@
-package Server06;
+package Server06.packed;
 
 import java.util.HashMap;
 import java.util.List;

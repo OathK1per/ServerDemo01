@@ -1,4 +1,4 @@
-package Server06;
+package Server06.packed;
 
 /**
  * xml中servlet tag部分下的信息和获取

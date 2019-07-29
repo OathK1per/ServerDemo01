@@ -1,4 +1,4 @@
-package Server06;
+package Server06.packed;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;

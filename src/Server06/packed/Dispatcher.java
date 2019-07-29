@@ -1,4 +1,4 @@
-package Server06;
+package Server06.packed;
 
 import java.io.*;
 import java.net.Socket;
@@ -27,12 +27,22 @@ public class Dispatcher implements Runnable {
     @Override
     public void run() {
         try {
+            if(request.getUrl() == null || request.getUrl().equals("")) {
+                InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("index.html");
+                response.print(new String(is.readAllBytes()));
+                response.toClient(200);
+                is.close();
+                return ;
+            }
             Servlet servlet = WebApp.getServletByUrl(request.getUrl());
             if (servlet != null) {
                 servlet.service(request, response);
                 response.toClient(200);
             } else {
+                InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("error.html");
+                response.print(new String(is.readAllBytes()));
                 response.toClient(404);
+                is.close();
             }
         } catch (IOException e) {
             try {
